@@ -110,7 +110,32 @@ class Processing(Optimization):
         npIdealFunction=npIdealFunction[:,selectedCaditates]
 
         #loops through all the points of npTestDataset
-        for i
+        for i in range(0, len(npTestDataset)+1):
+            
+            #gets the x value 
+            xValue=npTestDataset[i,0]
+            
+            #gets the index of the xValue from the npIdealFunction array
+            index=np.where(npIdealFunction[:,0]==xValue)
+            
+            #loops through all the idea functions
+            for j in range(0,4):
+
+                if npTestDataset[i,1]-npIdealFunction[index,j]<np.sqrt(2)*1: ###### to be corrected ---> it needs to be very well defined where the maximum difference is coming from
+                    #replace 1 for the adequate variable
+
+                    #adds the index of the column if the conditions are True
+                    npTestDataset[i,2]=selectedCaditates[j+1]
+
+        #returns the results 0 means there is no coincidence, other number means the column with the ideal function
+        return npTestDataset
+
+
+
+
+            
+
+
 
 
 
