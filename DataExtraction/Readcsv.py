@@ -2,6 +2,7 @@
 import pandas as pd
 import tkinter as tk
 from tkinter import filedialog
+from DataExtraction.Exceptions import MissingPathFile
 
 
 #creates a class that handles the search and download of the database from the .cvs-files
@@ -10,8 +11,11 @@ class HandleCSV():
     ## Description:\n
     Handles *.csv files and provides a DataFrame type variable with the information contained in the file.\n\n
 
-    ## Arguments:\n
-    filePath (str|None): string with file path to the location of the file which. If None is provided then a pop-up window will be provided select the file.
+    ## Initilization arguments:\n
+    filePath (str|None): string with file path to the location of the file which will be used. If None is provided then a pop-up window will be provided select the file.
+    
+    ## Parameters:\n
+    None
     '''
 
     #spaces for properties
@@ -53,55 +57,62 @@ class HandleCSV():
             if self.__filePath is None:
 
                 #indicates that one of the properties is None. Thus, the user will have to look after the files with a window
-                print('The parameter is a None-type. Please, select the file you want to read with the following window.')
-
-                #opens up a window to search for the file
-                while True:
-                    root=tk.Tk(screenName='Select file')
-                    root.withdraw()
-
-                    #gets the filepath
-                    self.__filePath=filedialog.askopenfilename(defaultextension='csv')
-                    
-                    #checks if something was selected
-                    if self.__filePath.endswith('.csv'):
-
-                        #gets out of the loop
-                        break
-
-                    #otherwise, indicates you that you need to pick up a file
-                    else:
-
-                        print('No file was selected. Please select one.')
-                        continue
+                raise MissingPathFile(pathFile=self.__filePath,msg='The parameter is a None-type. Please, select the file you want to read with the following window.')#print('The parameter is a None-type. Please, select the file you want to read with the following window.')
             
             #if the data type is string, then check at least that the extension is correct
             elif type(self.__filePath)==str:
 
                 if self.__filePath.endswith('.csv'):
+
+                    print('Correct file is been processed.')
                     pass #do nothing
                 
                 #informs that the data type is incorrect and ask to select a file with a dialog window
                 else:
 
-                    print('The file has the wrong data type. Please, select a file with the following dialog window')
+                    print('The file has the wrong data type. Please, select a file with the following dialog window.')
 
                     #makes the parameter filePath None and executes this function again
                     self.__filePath=None
 
+                    #it gives users the oportunity to select a new document.
                     self.__checkParametersDataType()
 
             else:
 
                 #informs that the wrong type of paramerter was used
-                print('An error has occured. The parameter filePath is {} type.\n'\
-                'Please, select a file with the following dialog window.'.format(type(self.__filePath)))
+                print('An error has occurred. The file format is {} type.\n'\
+                'Please, select a file with right file format in window dialog that follows.'.format(self.__filePath.split('.')[-1]))
+
+                #it gives users the oportunity to select a new document.
+                self.__checkParametersDataType()
+
                 return None
         
         #catch exceptions
-        except Exception as e:
+        except MissingPathFile as e:
 
             print('An unexpected error has ocurred: {}'.format(e))
+
+            #opens up a window to search for the file
+            while True:
+                root=tk.Tk(screenName='Select file')
+                root.withdraw()
+
+                #gets the filepath
+                self.__filePath=filedialog.askopenfilename(defaultextension='csv')
+                
+                #checks if something was selected
+                if self.__filePath.endswith('.csv'):
+
+                    #gets out of the loop
+                    break
+
+                #otherwise, indicates you that you need to pick up a file
+                else:
+
+                    print('No file was selected. Please select one.')
+                    continue
 
         #after everything was done, just return None
         finally:
@@ -125,7 +136,7 @@ class HandleCSV():
         try:
             self.__dataframe=pd.read_csv(
                 filepath_or_buffer=self.__filePath,
-                header=1
+                header=0
 
             )
 

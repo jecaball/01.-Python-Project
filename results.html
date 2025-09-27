@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Bokeh Plot</title>
+    <style>
+      html, body {
+        box-sizing: border-box;
+        display: flow-root;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+    <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-3.7.3.min.js"></script>
+    <script type="text/javascript">
+        Bokeh.set_log_level("info");
+    </script>
+  </head>
+  <body>
+    <div id="e7d160d3-7821-4bcf-9f5f-57e6dc43711e" data-root-id="p1199" style="display: contents;"></div>
+  
+    <script type="application/json" id="d9828cc7-ab1f-4d12-8816-a2e57a204681">
+      {"3cae20ee-c107-490f-b643-b4b737f5c3c5":{"version":"3.7.3","title":"Bokeh Application","roots":[{"type":"object","name":"Figure","id":"p1199","attributes":{"x_range":{"type":"object","name":"DataRange1d","id":"p1200"},"y_range":{"type":"object","name":"DataRange1d","id":"p1201"},"x_scale":{"type":"object","name":"LinearScale","id":"p1209"},"y_scale":{"type":"object","name":"LinearScale","id":"p1210"},"title":{"type":"object","name":"Title","id":"p1202","attributes":{"text":"Assignment of Ideal Functions"}},"renderers":[{"type":"object","name":"GlyphRenderer","id":"p1240","attributes":{"data_source":{"type":"object","name":"ColumnDataSource","id":"p1234","attributes":{"selected":{"type":"object","name":"Selection","id":"p1235","attributes":{"indices":[],"line_indices":[]}},"selection_policy":{"type":"object","name":"UnionRenderers","id":"p1236"},"data":{"type":"map","entries":[["x",{"type":"ndarray","array":{"type":"bytes","data":"AAAAAACAMUAzMzMzMzPTP2ZmZmZmZiHAMzMzMzMzM8AAAAAAAAAmwJqZmZmZmek/AAAAAAAALEDNzMzMzMwkwAAAAAAAAC7AMzMzMzMzF0BmZmZmZmYewM3MzMzMzDPAZmZmZmbmMkCamZmZmZkbQJqZmZmZmSFAAAAAAAAAI8AzMzMzMzMgQM3MzMzMzB5AAAAAAAAAEkBmZmZmZmYlQJqZmZmZmSHAZmZmZmZmJ0DNzMzMzMwuwM3MzMzMzCtAZmZmZmbmMcDNzMzMzMwIwDMzMzMzMyTAmpmZmZmZJ8DNzMzMzMwyQJqZmZmZmSzAMzMzMzMzGUDNzMzMzMwywM3MzMzMzB5AZmZmZmZmBsBmZmZmZmYgwGZmZmZmZgZAMzMzMzMzLEAAAAAAAAAQwDMzMzMzMxdAmpmZmZkZMUAAAAAAAAArQGZmZmZmZi1AZmZmZmZmK0CamZmZmZkfwDMzMzMzMx3AMzMzMzMzIsBmZmZmZmYSQDMzMzMzszNAmpmZmZmZMUAAAAAAAAASwM3MzMzMzBbAMzMzMzMzK0AAAAAAAADwvwAAAAAAAAhAzczMzMxMMsDNzMzMzMweQM3MzMzMzCjAZmZmZmZmJ0BmZmZmZmYGwGZmZmZmZiPAzczMzMzMJECamZmZmRkzwGZmZmZmZi3AZmZmZmZmIkAzMzMzMzMjwJqZmZmZmQnAMzMzMzMzJcAAAAAAAAApwDMzMzMzMxXAMzMzMzMzLUDNzMzMzMwwwI5/uQYAAFQ9zczMzMzMFkBmZmZmZmYSwAAAAAAAAC7AzczMzMzM9L9mZmZmZmYSwGZmZmZmZiDAmpmZmZmZKkAzMzMzMzMyQAAAAAAAACTAAAAAAAAAKMAzMzMzM7MyQAAAAAAAADTAAAAAAAAAKUDNzMzMzEwzwM3MzMzMTDBAzczMzMzMGkCamZmZmZkjQDMzMzMzMyRAMzMzMzMzK0DNzMzMzMwswDMzMzMzMyLAmpmZmZmZMEDNzMzMzMwowGZmZmZmZv6/ZmZmZmZmKEAAAAAAAIAwQDMzMzMzMxVAZmZmZmbmMUA="},"shape":[100],"dtype":"float64","order":"little"}],["y",{"type":"ndarray","array":{"type":"bytes","data":"hqxu9ZwUQUBjqNQ2D3HzPzDVzFoK2DDAC+9yEd+VQsD9FMeBV0M0wHMwmwDD0vY/Bs2V3ooGsb+L+49Mhw4AwMC2uKVZScq/y4P0FDlsJUAdOGdEab9DwNRhhVs+6jPAkx0bgXgxM0Ca7Qp9sDQfQDD8lu/PO+e/DJHT1/NNI8DoFU890qgwwHfWbrvQzCzAQ4x8Azji6r9PdjOjH2VDQMqmXOFdkjBAbsST3cwoP0AyrU1je309QOD2BIntni5AS2lHuxu18j/hzb8CPSkGwGhcOBCSOUTAh97i4T2bOED7XG3F/sJCQOHP8GYNfj7AKy/5n/zxKkAhkbbxJ9IqQEijAifbyC5AkVice1lkCsAo84++SZMwwPj578FrE0LAeMoPASzX0z8HCVG+oK0gwE4n2epyCidAD5nyIah2QcAGoFG69Ls1wKEMuFtQp9G/xr/PuHAoPEA+No/kbufLv7+2fvrPciLA+7DeqBWWIMC4kbJF0p4fwDvgumJGekNA9nr3x3uNQcBL6gQ0EcYjwEAmY8YlmANAsCDNWDRNKUDHgsKgTAdDQMaZkQdDGc+/jQjGwaUDM8CIga59AR0fQKH593TQwPM/BK+WOzOxJ0CRzfo5qj8FwNNOzeUGLzJAqg8k7xzSJECpSltc4xNDwAN9Ik+StjfAy1np/2ZjHkDUug1qv/0lwHRoR2BiAh1AlYJuL2msM0ADfLd546w5QDAvwD46fRHAe9y3Wieu5b8wYp8Aij1BwMCEwIAUa/A/lFD6QsiZP0A9UF2vn7Tfv1EU6BN5+ivAiSR6GcXyMUAicCTQYJMKwF/Rrdf0iC9AE5m5wOUlO0CVY7K4/4gyQOLqAIi7+jJAARdky/J15T+Y8VsZ+aHqP1RXPsvzSDPA0gDeAgm6N0A/br98sjpDwAiQoWMH3TBAlx5N9WTuGEDtuOF30wE1wNUGJ6JfqzRAOBPThViJPEAyPsxetmUvwCuGqwMgpj/AYTJVMCq1QMDK+s3EdJk6QLxTpj3KJRDAvgdcFbA2hb8Yey++aPtAwJaWkXpPlSTAKzV7oBUUPEA="},"shape":[100],"dtype":"float64","order":"little"}],["fill_color",{"type":"ndarray","array":{"type":"bytes","data":"AAAAAAAAJkAAAAAAAAAmQAAAAAAAAEhAAAAAAAAASEAAAAAAAABIQAAAAAAAAEhAAAAAAAAASEAAAAAAAIBEQAAAAAAAgERAAAAAAAAAJkAAAAAAAABIQAAAAAAAAEhAAAAAAAAASEAAAAAAAAAmQAAAAAAAAEhAAAAAAAAASEAAAAAAAABIQAAAAAAAAEhAAAAAAAAASEAAAAAAAAAAAAAAAAAAgERAAAAAAAAAAAAAAAAAAIBEQAAAAAAAACZAAAAAAACAREAAAAAAAABIQAAAAAAAAEhAAAAAAACAREAAAAAAAAAmQAAAAAAAAEhAAAAAAAAAAAAAAAAAAIBEQAAAAAAAACZAAAAAAAAASEAAAAAAAABIQAAAAAAAAEhAAAAAAAAASEAAAAAAAABIQAAAAAAAACZAAAAAAAAASEAAAAAAAABIQAAAAAAAAEhAAAAAAAAAJkAAAAAAAIBEQAAAAAAAAEhAAAAAAACAREAAAAAAAABIQAAAAAAAACZAAAAAAAAASEAAAAAAAABIQAAAAAAAgERAAAAAAAAASEAAAAAAAAAAAAAAAAAAAEhAAAAAAAAASEAAAAAAAABIQAAAAAAAgERAAAAAAAAASEAAAAAAAABIQAAAAAAAgERAAAAAAAAASEAAAAAAAABIQAAAAAAAAEhAAAAAAAAASEAAAAAAAABIQAAAAAAAAAAAAAAAAACAREAAAAAAAIBEQAAAAAAAgERAAAAAAAAASEAAAAAAAABIQAAAAAAAgERAAAAAAAAAAAAAAAAAAIBEQAAAAAAAgERAAAAAAAAAAAAAAAAAAIBEQAAAAAAAgERAAAAAAAAAJkAAAAAAAABIQAAAAAAAgERAAAAAAACAREAAAAAAAABIQAAAAAAAgERAAAAAAAAAJkAAAAAAAABIQAAAAAAAAEhAAAAAAAAASEAAAAAAAABIQAAAAAAAAAAAAAAAAAAAAAAAAAAAAABIQAAAAAAAAEhAAAAAAAAASEAAAAAAAAAAAAAAAAAAAEhAAAAAAAAASEAAAAAAAABIQAAAAAAAAEhAAAAAAAAAJkA="},"shape":[100],"dtype":"float64","order":"little"}],["hatch_color",{"type":"ndarray","array":{"type":"bytes","data":"AAAAAAAAJkAAAAAAAAAmQAAAAAAAAEhAAAAAAAAASEAAAAAAAABIQAAAAAAAAEhAAAAAAAAASEAAAAAAAIBEQAAAAAAAgERAAAAAAAAAJkAAAAAAAABIQAAAAAAAAEhAAAAAAAAASEAAAAAAAAAmQAAAAAAAAEhAAAAAAAAASEAAAAAAAABIQAAAAAAAAEhAAAAAAAAASEAAAAAAAAAAAAAAAAAAgERAAAAAAAAAAAAAAAAAAIBEQAAAAAAAACZAAAAAAACAREAAAAAAAABIQAAAAAAAAEhAAAAAAACAREAAAAAAAAAmQAAAAAAAAEhAAAAAAAAAAAAAAAAAAIBEQAAAAAAAACZAAAAAAAAASEAAAAAAAABIQAAAAAAAAEhAAAAAAAAASEAAAAAAAABIQAAAAAAAACZAAAAAAAAASEAAAAAAAABIQAAAAAAAAEhAAAAAAAAAJkAAAAAAAIBEQAAAAAAAAEhAAAAAAACAREAAAAAAAABIQAAAAAAAACZAAAAAAAAASEAAAAAAAABIQAAAAAAAgERAAAAAAAAASEAAAAAAAAAAAAAAAAAAAEhAAAAAAAAASEAAAAAAAABIQAAAAAAAgERAAAAAAAAASEAAAAAAAABIQAAAAAAAgERAAAAAAAAASEAAAAAAAABIQAAAAAAAAEhAAAAAAAAASEAAAAAAAABIQAAAAAAAAAAAAAAAAACAREAAAAAAAIBEQAAAAAAAgERAAAAAAAAASEAAAAAAAABIQAAAAAAAgERAAAAAAAAAAAAAAAAAAIBEQAAAAAAAgERAAAAAAAAAAAAAAAAAAIBEQAAAAAAAgERAAAAAAAAAJkAAAAAAAABIQAAAAAAAgERAAAAAAACAREAAAAAAAABIQAAAAAAAgERAAAAAAAAAJkAAAAAAAABIQAAAAAAAAEhAAAAAAAAASEAAAAAAAABIQAAAAAAAAAAAAAAAAAAAAAAAAAAAAABIQAAAAAAAAEhAAAAAAAAASEAAAAAAAAAAAAAAAAAAAEhAAAAAAAAASEAAAAAAAABIQAAAAAAAAEhAAAAAAAAAJkA="},"shape":[100],"dtype":"float64","order":"little"}],["line_color",{"type":"ndarray","array":{"type":"bytes","data":"AAAAAAAAJkAAAAAAAAAmQAAAAAAAAEhAAAAAAAAASEAAAAAAAABIQAAAAAAAAEhAAAAAAAAASEAAAAAAAIBEQAAAAAAAgERAAAAAAAAAJkAAAAAAAABIQAAAAAAAAEhAAAAAAAAASEAAAAAAAAAmQAAAAAAAAEhAAAAAAAAASEAAAAAAAABIQAAAAAAAAEhAAAAAAAAASEAAAAAAAAAAAAAAAAAAgERAAAAAAAAAAAAAAAAAAIBEQAAAAAAAACZAAAAAAACAREAAAAAAAABIQAAAAAAAAEhAAAAAAACAREAAAAAAAAAmQAAAAAAAAEhAAAAAAAAAAAAAAAAAAIBEQAAAAAAAACZAAAAAAAAASEAAAAAAAABIQAAAAAAAAEhAAAAAAAAASEAAAAAAAABIQAAAAAAAACZAAAAAAAAASEAAAAAAAABIQAAAAAAAAEhAAAAAAAAAJkAAAAAAAIBEQAAAAAAAAEhAAAAAAACAREAAAAAAAABIQAAAAAAAACZAAAAAAAAASEAAAAAAAABIQAAAAAAAgERAAAAAAAAASEAAAAAAAAAAAAAAAAAAAEhAAAAAAAAASEAAAAAAAABIQAAAAAAAgERAAAAAAAAASEAAAAAAAABIQAAAAAAAgERAAAAAAAAASEAAAAAAAABIQAAAAAAAAEhAAAAAAAAASEAAAAAAAABIQAAAAAAAAAAAAAAAAACAREAAAAAAAIBEQAAAAAAAgERAAAAAAAAASEAAAAAAAABIQAAAAAAAgERAAAAAAAAAAAAAAAAAAIBEQAAAAAAAgERAAAAAAAAAAAAAAAAAAIBEQAAAAAAAgERAAAAAAAAAJkAAAAAAAABIQAAAAAAAgERAAAAAAACAREAAAAAAAABIQAAAAAAAgERAAAAAAAAAJkAAAAAAAABIQAAAAAAAAEhAAAAAAAAASEAAAAAAAABIQAAAAAAAAAAAAAAAAAAAAAAAAAAAAABIQAAAAAAAAEhAAAAAAAAASEAAAAAAAAAAAAAAAAAAAEhAAAAAAAAASEAAAAAAAABIQAAAAAAAAEhAAAAAAAAAJkA="},"shape":[100],"dtype":"float64","order":"little"}]]}}},"view":{"type":"object","name":"CDSView","id":"p1241","attributes":{"filter":{"type":"object","name":"AllIndices","id":"p1242"}}},"glyph":{"type":"object","name":"Scatter","id":"p1237","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"line_color":{"type":"field","field":"line_color"},"fill_color":{"type":"field","field":"fill_color"},"hatch_color":{"type":"field","field":"hatch_color"}}},"nonselection_glyph":{"type":"object","name":"Scatter","id":"p1238","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"line_color":{"type":"field","field":"line_color"},"line_alpha":{"type":"value","value":0.1},"fill_color":{"type":"field","field":"fill_color"},"fill_alpha":{"type":"value","value":0.1},"hatch_color":{"type":"field","field":"hatch_color"},"hatch_alpha":{"type":"value","value":0.1}}},"muted_glyph":{"type":"object","name":"Scatter","id":"p1239","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"line_color":{"type":"field","field":"line_color"},"line_alpha":{"type":"value","value":0.2},"fill_color":{"type":"field","field":"fill_color"},"fill_alpha":{"type":"value","value":0.2},"hatch_color":{"type":"field","field":"hatch_color"},"hatch_alpha":{"type":"value","value":0.2}}}}}],"toolbar":{"type":"object","name":"Toolbar","id":"p1208","attributes":{"tools":[{"type":"object","name":"PanTool","id":"p1221"},{"type":"object","name":"WheelZoomTool","id":"p1222","attributes":{"renderers":"auto"}},{"type":"object","name":"BoxZoomTool","id":"p1223","attributes":{"dimensions":"both","overlay":{"type":"object","name":"BoxAnnotation","id":"p1224","attributes":{"syncable":false,"line_color":"black","line_alpha":1.0,"line_width":2,"line_dash":[4,4],"fill_color":"lightgrey","fill_alpha":0.5,"level":"overlay","visible":false,"left":{"type":"number","value":"nan"},"right":{"type":"number","value":"nan"},"top":{"type":"number","value":"nan"},"bottom":{"type":"number","value":"nan"},"left_units":"canvas","right_units":"canvas","top_units":"canvas","bottom_units":"canvas","handles":{"type":"object","name":"BoxInteractionHandles","id":"p1230","attributes":{"all":{"type":"object","name":"AreaVisuals","id":"p1229","attributes":{"fill_color":"white","hover_fill_color":"lightgray"}}}}}}}},{"type":"object","name":"SaveTool","id":"p1231"},{"type":"object","name":"ResetTool","id":"p1232"},{"type":"object","name":"HelpTool","id":"p1233"}]}},"left":[{"type":"object","name":"LinearAxis","id":"p1216","attributes":{"ticker":{"type":"object","name":"BasicTicker","id":"p1217","attributes":{"mantissas":[1,2,5]}},"formatter":{"type":"object","name":"BasicTickFormatter","id":"p1218"},"axis_label":"Y-values [N.A.]","major_label_policy":{"type":"object","name":"AllLabels","id":"p1219"}}}],"below":[{"type":"object","name":"LinearAxis","id":"p1211","attributes":{"ticker":{"type":"object","name":"BasicTicker","id":"p1212","attributes":{"mantissas":[1,2,5]}},"formatter":{"type":"object","name":"BasicTickFormatter","id":"p1213"},"axis_label":"X-values [N.A.]","major_label_policy":{"type":"object","name":"AllLabels","id":"p1214"}}}],"center":[{"type":"object","name":"Grid","id":"p1215","attributes":{"axis":{"id":"p1211"}}},{"type":"object","name":"Grid","id":"p1220","attributes":{"dimension":1,"axis":{"id":"p1216"}}}]}}]}}
+    </script>
+    <script type="text/javascript">
+      (function() {
+        const fn = function() {
+          Bokeh.safely(function() {
+            (function(root) {
+              function embed_document(root) {
+              const docs_json = document.getElementById('d9828cc7-ab1f-4d12-8816-a2e57a204681').textContent;
+              const render_items = [{"docid":"3cae20ee-c107-490f-b643-b4b737f5c3c5","roots":{"p1199":"e7d160d3-7821-4bcf-9f5f-57e6dc43711e"},"root_ids":["p1199"]}];
+              root.Bokeh.embed.embed_items(docs_json, render_items);
+              }
+              if (root.Bokeh !== undefined) {
+                embed_document(root);
+              } else {
+                let attempts = 0;
+                const timer = setInterval(function(root) {
+                  if (root.Bokeh !== undefined) {
+                    clearInterval(timer);
+                    embed_document(root);
+                  } else {
+                    attempts++;
+                    if (attempts > 100) {
+                      clearInterval(timer);
+                      console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+                    }
+                  }
+                }, 10, root)
+              }
+            })(window);
+          });
+        };
+        if (document.readyState != "loading") fn();
+        else document.addEventListener("DOMContentLoaded", fn);
+      })();
+    </script>
+  </body>
+</html>
